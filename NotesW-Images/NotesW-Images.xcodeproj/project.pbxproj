@@ -17,10 +17,12 @@
 		96A4CC9A29ADF12B00479CA2 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A4CC9829ADF12B00479CA2 /* MainCollectionViewCell.xib */; };
 		96A4CCA129ADF84C00479CA2 /* NewItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CC9F29ADF84C00479CA2 /* NewItemVC.swift */; };
 		96A4CCA229ADF84C00479CA2 /* NewItemVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A4CCA029ADF84C00479CA2 /* NewItemVC.xib */; };
-		96A4CCA929AE149600479CA2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCA729AE149600479CA2 /* Model.xcdatamodeld */; };
-		96A4CCAC29AE14EE00479CA2 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCAA29AE14EE00479CA2 /* Items+CoreDataClass.swift */; };
-		96A4CCAD29AE14EE00479CA2 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCAB29AE14EE00479CA2 /* Items+CoreDataProperties.swift */; };
-		96A4CCAF29AE2F5700479CA2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCAE29AE2F5700479CA2 /* Model.swift */; };
+		96A4CCAF29AE2F5700479CA2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCAE29AE2F5700479CA2 /* ViewModel.swift */; };
+		96A4CCB129AE44FC00479CA2 /* NewItemVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCB029AE44FC00479CA2 /* NewItemVCViewModel.swift */; };
+		96A4CCCD29AF41DF00479CA2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCCB29AF41DF00479CA2 /* Model.xcdatamodeld */; };
+		96A4CCD029AF421200479CA2 /* Items+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCCE29AF421200479CA2 /* Items+CoreDataClass.swift */; };
+		96A4CCD129AF421200479CA2 /* Items+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A4CCCF29AF421200479CA2 /* Items+CoreDataProperties.swift */; };
+		96BDC31929AF679000D7AC11 /* Keyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDC31829AF679000D7AC11 /* Keyboard+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +38,12 @@
 		96A4CC9829ADF12B00479CA2 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		96A4CC9F29ADF84C00479CA2 /* NewItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemVC.swift; sourceTree = "<group>"; };
 		96A4CCA029ADF84C00479CA2 /* NewItemVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemVC.xib; sourceTree = "<group>"; };
-		96A4CCA829AE149600479CA2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		96A4CCAA29AE14EE00479CA2 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
-		96A4CCAB29AE14EE00479CA2 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		96A4CCAE29AE2F5700479CA2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		96A4CCAE29AE2F5700479CA2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		96A4CCB029AE44FC00479CA2 /* NewItemVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemVCViewModel.swift; sourceTree = "<group>"; };
+		96A4CCCC29AF41DF00479CA2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		96A4CCCE29AF421200479CA2 /* Items+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96A4CCCF29AF421200479CA2 /* Items+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Items+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96BDC31829AF679000D7AC11 /* Keyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,6 @@
 		96A4CC6E29ADEE7600479CA2 = {
 			isa = PBXGroup;
 			children = (
-				96A4CCAA29AE14EE00479CA2 /* Items+CoreDataClass.swift */,
-				96A4CCAB29AE14EE00479CA2 /* Items+CoreDataProperties.swift */,
 				96A4CC7929ADEE7600479CA2 /* NotesW-Images */,
 				96A4CC7829ADEE7600479CA2 /* Products */,
 			);
@@ -74,21 +76,97 @@
 		96A4CC7929ADEE7600479CA2 /* NotesW-Images */ = {
 			isa = PBXGroup;
 			children = (
+				96BDC31629AF675200D7AC11 /* Helpers */,
+				96BDC31A29AF67DB00D7AC11 /* SupportingFiles */,
+				96BDC31C29AF68D900D7AC11 /* Views */,
+				96BDC31B29AF68AD00D7AC11 /* ViewModel */,
+				96BDC31529AF672600D7AC11 /* CoreData-Model */,
+			);
+			path = "NotesW-Images";
+			sourceTree = "<group>";
+		};
+		96BDC31529AF672600D7AC11 /* CoreData-Model */ = {
+			isa = PBXGroup;
+			children = (
+				96A4CCCE29AF421200479CA2 /* Items+CoreDataClass.swift */,
+				96A4CCCF29AF421200479CA2 /* Items+CoreDataProperties.swift */,
+				96A4CCCB29AF41DF00479CA2 /* Model.xcdatamodeld */,
+			);
+			path = "CoreData-Model";
+			sourceTree = "<group>";
+		};
+		96BDC31629AF675200D7AC11 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				96BDC31729AF675800D7AC11 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		96BDC31729AF675800D7AC11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96BDC31829AF679000D7AC11 /* Keyboard+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96BDC31A29AF67DB00D7AC11 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				96A4CC7A29ADEE7600479CA2 /* AppDelegate.swift */,
 				96A4CC7C29ADEE7600479CA2 /* SceneDelegate.swift */,
 				96A4CC8629ADEE7700479CA2 /* Assets.xcassets */,
 				96A4CC8829ADEE7700479CA2 /* LaunchScreen.storyboard */,
 				96A4CC8B29ADEE7700479CA2 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		96BDC31B29AF68AD00D7AC11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96A4CCAE29AE2F5700479CA2 /* ViewModel.swift */,
+				96A4CCB029AE44FC00479CA2 /* NewItemVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96BDC31C29AF68D900D7AC11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96BDC31D29AF68DF00D7AC11 /* MainView */,
+				96BDC31F29AF691B00D7AC11 /* NewItemView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96BDC31D29AF68DF00D7AC11 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
 				96A4CC9329ADF09900479CA2 /* MainViewController.swift */,
 				96A4CC9429ADF09900479CA2 /* MainViewController.xib */,
+				96BDC31E29AF68E900D7AC11 /* CollectionViewCell */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		96BDC31E29AF68E900D7AC11 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				96A4CC9729ADF12B00479CA2 /* MainCollectionViewCell.swift */,
 				96A4CC9829ADF12B00479CA2 /* MainCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		96BDC31F29AF691B00D7AC11 /* NewItemView */ = {
+			isa = PBXGroup;
+			children = (
 				96A4CC9F29ADF84C00479CA2 /* NewItemVC.swift */,
 				96A4CCA029ADF84C00479CA2 /* NewItemVC.xib */,
-				96A4CCA729AE149600479CA2 /* Model.xcdatamodeld */,
-				96A4CCAE29AE2F5700479CA2 /* Model.swift */,
 			);
-			path = "NotesW-Images";
+			path = NewItemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,15 +242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A4CCAF29AE2F5700479CA2 /* Model.swift in Sources */,
+				96A4CCAF29AE2F5700479CA2 /* ViewModel.swift in Sources */,
 				96A4CC7B29ADEE7600479CA2 /* AppDelegate.swift in Sources */,
-				96A4CCAC29AE14EE00479CA2 /* Items+CoreDataClass.swift in Sources */,
+				96A4CCD129AF421200479CA2 /* Items+CoreDataProperties.swift in Sources */,
 				96A4CC7D29ADEE7600479CA2 /* SceneDelegate.swift in Sources */,
+				96A4CCCD29AF41DF00479CA2 /* Model.xcdatamodeld in Sources */,
+				96BDC31929AF679000D7AC11 /* Keyboard+Extension.swift in Sources */,
+				96A4CCB129AE44FC00479CA2 /* NewItemVCViewModel.swift in Sources */,
+				96A4CCD029AF421200479CA2 /* Items+CoreDataClass.swift in Sources */,
 				96A4CC9929ADF12B00479CA2 /* MainCollectionViewCell.swift in Sources */,
 				96A4CCA129ADF84C00479CA2 /* NewItemVC.swift in Sources */,
 				96A4CC9529ADF09900479CA2 /* MainViewController.swift in Sources */,
-				96A4CCAD29AE14EE00479CA2 /* Items+CoreDataProperties.swift in Sources */,
-				96A4CCA929AE149600479CA2 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F9V6WPSDK2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NotesW-Images/Info.plist";
+				INFOPLIST_FILE = "NotesW-Images/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -343,7 +423,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F9V6WPSDK2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NotesW-Images/Info.plist";
+				INFOPLIST_FILE = "NotesW-Images/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -388,12 +468,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		96A4CCA729AE149600479CA2 /* Model.xcdatamodeld */ = {
+		96A4CCCB29AF41DF00479CA2 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				96A4CCA829AE149600479CA2 /* Model.xcdatamodel */,
+				96A4CCCC29AF41DF00479CA2 /* Model.xcdatamodel */,
 			);
-			currentVersion = 96A4CCA829AE149600479CA2 /* Model.xcdatamodel */;
+			currentVersion = 96A4CCCC29AF41DF00479CA2 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -9,40 +9,30 @@ import UIKit
 
 class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var newName: UITextField!
     @IBOutlet weak var newSize: UITextField!
     @IBOutlet weak var newPrice: UITextField!
     
-    
-    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var newItemVCModel = NewItemVCViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGesture()
-        
-    }
+        newImage.image = UIImage(named: "demoImage")
+        setupKeyboardHiding()
+        }
+    
     
     func addData() {
-        let newObject = Items(context: self.context)
-        newObject.name = newName.text
-        newObject.price = newPrice.text!
-        newObject.size = newSize.text
-        newObject.image = newImage.image!.jpegData(compressionQuality: 0.7)
-        newObject.id = UUID()
-        
-        do {
-            try context.save()
-            print("succuss - save")
-        } catch {
-            print("error - addData")
+        if let price = Double(newPrice.text!) {
+            newItemVCModel.addData(name: newName.text!, price: price, size: newSize.text!, image: (newImage.image?.jpegData(compressionQuality: 0.5))!)
+        } else {
+            alert(message: "Please enter valid number in the price area")
         }
-        
     }
     
-    
+    //MARK: - Keyboard And ImagePicking Gestures
     
     func setupGesture() {
         newImage.isUserInteractionEnabled = true
@@ -69,11 +59,30 @@ class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         view.endEditing(true)
     }
     
+    //MARK: - Save Button
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        let vc = MainViewController()
-        addData()
-        navigationController?.popViewController(animated: true)
-        
+        if newImage.image == UIImage(named: "demoImage") {
+            alert(message: "Image cannot be empty!")
+        } else if newName.text == "" {
+            alert(message: "Name cannot be empty!")
+        } else if newSize.text == "" {
+            alert(message: "Size cannot be empty!")
+        } else if newPrice.text == "" {
+            alert(message: "Price cannot be empty!")
+        } else {
+            addData()
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    //MARK: - Alert Func
+    
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
 }
+
+
