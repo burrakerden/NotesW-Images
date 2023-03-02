@@ -15,6 +15,14 @@ class NewItemVCViewModel {
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Items")
     
+    func fetchData() {
+        do {
+            items = try context.fetch(Items.fetchRequest())
+        } catch {
+            print("error - fetchData")
+        }
+    }
+    
     func addData(name: String, price: Double, size: String, image: Data) {
         let newObject = Items(context: context)
         newObject.name = name
@@ -28,6 +36,20 @@ class NewItemVCViewModel {
             print("succuss - save")
         } catch {
             print("error - addData")
+        }
+    }
+    
+    func editData(name: String, price: Double, size: String, image: Data, indexPath: Int) {
+        let dataToEdit = items?[indexPath]
+            dataToEdit?.name = name
+            dataToEdit?.size = size
+            dataToEdit?.price = price
+            dataToEdit?.image = image
+        do {
+            try context.save()
+            print("oki")
+        } catch {
+            print("error - edit")
         }
     }
 }

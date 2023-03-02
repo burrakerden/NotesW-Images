@@ -13,22 +13,58 @@ class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var newName: UITextField!
     @IBOutlet weak var newSize: UITextField!
     @IBOutlet weak var newPrice: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var newItemVCModel = NewItemVCViewModel()
+    var model = MainViewModel()
+    var indexPath: Int?
+    
+    //MARK: - Licecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGesture()
-        newImage.image = UIImage(named: "demoImage")
         setupKeyboardHiding()
-        }
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupEditUI()
+    }
     
-    func addData() {
-        if let price = Double(newPrice.text!) {
-            newItemVCModel.addData(name: newName.text!, price: price, size: newSize.text!, image: (newImage.image?.jpegData(compressionQuality: 0.5))!)
+    //MARK: - Config
+    
+    func setupEditUI() {
+        if indexPath == nil {
+            newName.text = ""
+            newSize.text = ""
+            newPrice.text =  ""
+            newImage.image = UIImage(named: "demoImage")
+            saveButton.setTitle("Save", for: .normal)
         } else {
-            alert(message: "Please enter valid number in the price area")
+            saveButton.setTitle("Edit", for: .normal)
+            newItemVCModel.fetchData()
+            if let item = newItemVCModel.items?[indexPath!] {
+                newName.text = item.name
+                newSize.text = item.size
+                newPrice.text =  String(format: "%.2f", item.price)
+                newImage.image = UIImage(data: item.image!)
+            }
+        }
+    }
+    
+    //MARK: - Add And Edit Data
+    
+    func addAndEditData() {
+        if indexPath == nil {
+            if let price = Double(newPrice.text!) {
+                newItemVCModel.addData(name: newName.text!, price: price, size: newSize.text!, image: (newImage.image?.jpegData(compressionQuality: 0.5))!)
+            } else {
+                alert(message: "Please enter valid number in the price area")
+            }
+        } else {
+            if let price = Double(newPrice.text!) {
+                newItemVCModel.editData(name: newName.text!, price: price, size: newSize.text!, image: (newImage.image?.jpegData(compressionQuality: 0.5))!, indexPath: indexPath!)
+            }
         }
     }
     
@@ -59,7 +95,7 @@ class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         view.endEditing(true)
     }
     
-    //MARK: - Save Button
+    //MARK: - Save and Edit Button
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if newImage.image == UIImage(named: "demoImage") {
@@ -71,7 +107,7 @@ class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         } else if newPrice.text == "" {
             alert(message: "Price cannot be empty!")
         } else {
-            addData()
+            addAndEditData()
             navigationController?.popViewController(animated: true)
         }
     }
@@ -79,7 +115,7 @@ class NewItemVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     //MARK: - Alert Func
     
     func alert(message: String) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true)
     }

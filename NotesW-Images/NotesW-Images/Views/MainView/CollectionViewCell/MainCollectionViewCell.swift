@@ -25,6 +25,13 @@ class MainCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    func setupCellUI(data: Items) {
+            itemName.text = data.name
+            itemSize.text = data.size
+            itemPrice.text = String(format: "%.2f", data.price) + " $"
+            myImage.image = UIImage(data: data.image!)
+    }
+    
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         delegate?.deleteData(index: index!.row)
     }

@@ -14,6 +14,7 @@
                 <outlet property="newName" destination="zkC-g1-ent" id="w0r-ON-9mv"/>
                 <outlet property="newPrice" destination="qQl-XY-wLc" id="ZI1-VH-b1D"/>
                 <outlet property="newSize" destination="2It-bk-V8A" id="XUD-eO-jrG"/>
+                <outlet property="saveButton" destination="BUr-D6-tHN" id="pBI-NR-s0N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,7 +54,7 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <buttonConfiguration key="configuration" style="gray" title="Save" cornerStyle="capsule">
-                        <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                        <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                         <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
