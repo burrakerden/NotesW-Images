@@ -10,10 +10,10 @@ import CoreData
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var midLabel: UILabel!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var model = MainViewModel()
+    var indexPath: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +33,13 @@ class MainViewController: UIViewController {
         navigationItem.title = "Take Note"
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.tintColor = .black
+        rightButton()
     }
     
     func tipLabel() {
         if model.items?.count == 0 {
             midLabel.isHidden = false
-            addButton.isHidden = false
         } else {
-            addButton.isHidden = true
             midLabel.isHidden = true
         }
     }
@@ -50,12 +49,18 @@ class MainViewController: UIViewController {
     func fetchData() {
         model.fetchData(mainCollectionView: mainCollectionView)
     }
-    //MARK: - Add Button
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
+    //MARK: - Right Bar Button
+    
+    private func rightButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(navAddButton))
+    }
+    
+    @objc func navAddButton() {
         let vc = NewItemVC()
         navigationController?.pushViewController(vc, animated: true)
     }
+
 }
 
 //MARK: - Collection View
@@ -73,6 +78,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         cell.index = indexPath
         cell.delegate = self
+        self.indexPath = indexPath.row
         return cell
     }
     
