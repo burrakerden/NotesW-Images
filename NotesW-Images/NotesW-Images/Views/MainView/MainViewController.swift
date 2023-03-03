@@ -8,10 +8,9 @@
 import UIKit
 import CoreData
 
-
-
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var midLabel: UILabel!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var model = MainViewModel()
@@ -34,13 +33,14 @@ class MainViewController: UIViewController {
         navigationItem.title = "Take Note"
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItemButton))
     }
     
     func tipLabel() {
         if model.items?.count == 0 {
             midLabel.isHidden = false
+            addButton.isHidden = false
         } else {
+            addButton.isHidden = true
             midLabel.isHidden = true
         }
     }
@@ -50,10 +50,9 @@ class MainViewController: UIViewController {
     func fetchData() {
         model.fetchData(mainCollectionView: mainCollectionView)
     }
+    //MARK: - Add Button
     
-    //MARK: - Right Bar Button
-    
-    @objc func addItemButton() {
+    @IBAction func addButtonPressed(_ sender: UIButton) {
         let vc = NewItemVC()
         navigationController?.pushViewController(vc, animated: true)
     }

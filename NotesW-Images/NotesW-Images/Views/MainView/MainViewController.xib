@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="NotesW_Images" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="ULF-7B-ETH" id="2eD-Pq-1rV"/>
                 <outlet property="mainCollectionView" destination="n0a-ss-q4r" id="0Qe-Jv-S6h"/>
                 <outlet property="midLabel" destination="3jm-Xn-uV3" id="dNU-d5-cNM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,19 +32,33 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can press the plus button to add notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jm-Xn-uV3">
-                    <rect key="frame" x="33.666666666666657" y="415.66666666666669" width="325.66666666666674" height="21"/>
+                    <rect key="frame" x="33.666666666666657" y="416" width="325.66666666666674" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULF-7B-ETH">
+                    <rect key="frame" x="137.33333333333334" y="676" width="118.33333333333334" height="34"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="ADD NOTES"/>
+                    <buttonConfiguration key="configuration" style="gray" title="ADD NOTES" cornerStyle="capsule"/>
+                    <connections>
+                        <action selector="addButtonPressed:" destination="-1" eventType="touchUpInside" id="sAq-qN-4b2"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ULF-7B-ETH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EXE-pP-kNc"/>
                 <constraint firstItem="n0a-ss-q4r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IX6-zT-hvX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="3jm-Xn-uV3" secondAttribute="bottom" constant="-377" id="ZS8-iV-MeB"/>
                 <constraint firstItem="n0a-ss-q4r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aWU-1u-enf"/>
                 <constraint firstItem="3jm-Xn-uV3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="b4s-5G-JXg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ULF-7B-ETH" secondAttribute="bottom" constant="108" id="dPP-oc-vgi"/>
                 <constraint firstItem="3jm-Xn-uV3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dtg-73-agC"/>
+                <constraint firstItem="ULF-7B-ETH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="676" id="mJH-UA-3jH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n0a-ss-q4r" secondAttribute="trailing" id="tol-Lu-lKa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n0a-ss-q4r" secondAttribute="bottom" id="xg6-bO-duh"/>
             </constraints>
