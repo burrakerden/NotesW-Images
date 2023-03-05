@@ -5,7 +5,7 @@ I used core data properly and combined it with some features.
 
 * In this application, you can take an image from the photo gallery and save it with 3 different notes. You can think of it like a shopping list app, but the last option, price, only accepts integers.
 * You can also click on the collection cell and edit the item you saved to the core data. And again, you can click the "-" button on the cell and delete the product you registered from the core data (I used protocol for this feature).
-* Also note the position of the keyboard when the texfield is clicked. will position the textfield above the keyboard.
+* Also note the position of the keyboard when the textfield is clicked. Textfields position will be above the keyboard.
 
 
 ## Features
